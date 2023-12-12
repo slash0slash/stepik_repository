@@ -17,5 +17,3 @@ def test_guest_can_add_product_to_basket(driver, link):
     page.get_success_book_price()
     page.get_book_price()
    
-
-    
