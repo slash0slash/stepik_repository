@@ -1,11 +1,12 @@
 from .base_page import BasePage
 from .locators_product import BasketLocators
+from .locators import BasePageLocators
 
 class Basket(BasePage):
     def add_book_to_basket(self):
         basket_btn = self.driver.find_element(*BasketLocators.BASKET_BTN)
         basket_btn.click()
-        #self.solve_quiz_and_get_code()
+        self.solve_quiz_and_get_code()
 
     def get_book_in_success_message(self):
         message_book = self.driver.find_element(*BasketLocators.MESSAGE_BOOK).text
@@ -37,3 +38,7 @@ class Basket(BasePage):
     def not_success_message(self):
         message_book = self.get_book_in_success_message()
         assert self.is_disappeared(*BasketLocators.MESSAGE_BOOK), "Success message is presented, but should not be"
+
+    def should_be_login_link(self):
+        assert self.is_element_present(*BasePageLocators.LOGIN_LINK), "Login and link aren't presented"
+        

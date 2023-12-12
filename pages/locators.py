@@ -7,3 +7,7 @@ class LoginPageLocators():
     LOGIN_URL = (By.CSS_SELECTOR, "a#login_link")
     LOGIN_FORM = (By.CSS_SELECTOR, "form#login_form.well")
     REGISTER_FORM = (By.CSS_SELECTOR, "form#register_form.well")
+
+class BasePageLocators():
+    LOGIN_LINK = (By.CSS_SELECTOR, "#login_link")
+    LOGIN_LINK_INVALID = (By.CSS_SELECTOR, "#login_link_inc")
