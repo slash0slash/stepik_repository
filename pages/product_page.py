@@ -5,7 +5,7 @@ class Basket(BasePage):
     def add_book_to_basket(self):
         basket_btn = self.driver.find_element(*BasketLocators.BASKET_BTN)
         basket_btn.click()
-        self.solve_quiz_and_get_code()
+        #self.solve_quiz_and_get_code()
 
     def get_book_in_success_message(self):
         message_book = self.driver.find_element(*BasketLocators.MESSAGE_BOOK).text
@@ -27,3 +27,13 @@ class Basket(BasePage):
         print(book_price)
         return book_price
     
+    def should_not_be_success_message(self):
+        message_book = self.get_book_in_success_message()
+        assert self.is_not_element_present(*BasketLocators.MESSAGE_BOOK), "Success message is presented, but should not be"
+
+    def dont_see_success_message(self):
+        assert self.is_not_element_present(*BasketLocators.SUCCESS_MESSAGE), "Success message is presented, but should not be"
+
+    def not_success_message(self):
+        message_book = self.get_book_in_success_message()
+        assert self.is_disappeared(*BasketLocators.MESSAGE_BOOK), "Success message is presented, but should not be"
