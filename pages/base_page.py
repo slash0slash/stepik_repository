@@ -53,7 +53,7 @@ class BasePage():
         return True
 
     def go_to_login_page(self):
-        link = self.driver.find_element(*BasePageLocators.LOGIN_LINK_INVALID)
+        link = self.driver.find_element(*BasePageLocators.LOGIN_LINK)
         link.click()
 
     def should_be_login_link(self):
@@ -66,3 +66,4 @@ class BasePage():
 class MainPage(BasePage):
     def __init__(self, *args, **kwargs):
         super(MainPage, self).__init__(*args, **kwargs)
+
