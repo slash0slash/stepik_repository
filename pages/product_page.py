@@ -1,8 +1,8 @@
 from .base_page import BasePage
-from .locators_product import BasketLocators
+from .locators_product import ProductPageLocators
 from .locators import BasePageLocators
 
-class Basket(BasePage):
+class ProductPage(BasePage):
     def add_book_to_basket(self):
         basket_btn = self.driver.find_element(*BasketLocators.BASKET_BTN)
         basket_btn.click()

@@ -1,7 +1,7 @@
 from .base_page import BasePage
 from selenium.webdriver.common.by import By
 from .locators import MainPageLocators
-from .locators_product import BasketLocators
+from .locators_product import ProductPageLocators
 class MainPage(BasePage):
     def go_to_login_page(self):
         link = self.driver.find_element(*MainPageLocators.LOGIN_LINK)

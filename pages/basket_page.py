@@ -1,5 +1,5 @@
 from .base_page import BasePage
-from .locators_product import BasketLocators
+from .locators_product import ProductPageLocators
 from .locators import BasePageLocators
 
 class BasketPage(BasePage):
