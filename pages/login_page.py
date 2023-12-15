@@ -23,13 +23,13 @@ class LoginPage(BasePage):
         assert self.is_element_present(*LoginPageLocators.REGISTER_FORM), "Register form is not presented"
         
     def register_new_user(self, email, password, password_again):
-        email_field = self.driver.find_element(*BasketLocators.EMAIL_FIELD)
+        email_field = self.driver.find_element(*ProductPageLocators.EMAIL_FIELD)
         email_field.send_keys(email)
-        password_field = self.driver.find_element(*BasketLocators.PASSWORD_FIELD)
+        password_field = self.driver.find_element(*ProductPageLocators.PASSWORD_FIELD)
         password_field.send_keys(password)
-        password_field_again = self.driver.find_element(*BasketLocators.PASSWORD_FIELD_AGAIN)
+        password_field_again = self.driver.find_element(*ProductPageLocators.PASSWORD_FIELD_AGAIN)
         password_field_again.send_keys(password_again)
-        register_btn = self.driver.find_element(*BasketLocators.REGISTER_BTN)
+        register_btn = self.driver.find_element(*ProductPageLocators.REGISTER_BTN)
         register_btn.click()
 
     def should_be_authorized_user(self):

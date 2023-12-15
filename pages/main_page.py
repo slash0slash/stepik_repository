@@ -10,7 +10,7 @@ class MainPage(BasePage):
         assert self.is_element_present(*MainPageLocators.LOGIN_LINK), "Login link is not presented"
 
     def should_be_in_basket(self):
-        assert self.is_element_present(*BasketLocators.BOOK_IN_BASKET), "Book isn't in basket"
+        assert self.is_element_present(*ProductPageLocators.BOOK_IN_BASKET), "Book isn't in basket"
 
     def should_be_price(self):
-        assert self.is_element_present(*BasketLocators.BASKET_PRICE), "Price isn't true"
+        assert self.is_element_present(*ProductPageLocators.BASKET_PRICE), "Price isn't true"
